@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+	Татуаж в Киеве - Контакты
+{% endblock %}
+{% block libs %}
+	{{ block.super }}
+{% endblock %}
+{% block menu %}
+    <div class="subpages-nav">
+      <nav>
+	  <ul class="menu">
+          <li class="li-none"><a href="{{ first_item }}">Главная</a></li>
+          <li><a href="{{ second_item }}">Фото</a></li>
+		  <li><a href="{{ third_item }}">Цены</a></li>
+          <li class="li-left li-none"><a href="{{ forth_item }}">Отзывы</a></li>
+          <li><a  href="{{ five_item }}" class="moveup" >Вопрос<br>ответ</a></li>
+          <li class="current"><a href="{{ six_item }}">Контакты</a></li>
+      </ul>
+	<h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt="Таутаж логотип"></a></h1>
+      </nav>
+    </div>
+{% endblock %}
+{% block content %}
+<!--==============================content================================-->
+<section id="content">
+  <div class="pad-1">
+    <div class="page6-row1">
+      <div class="col-14">
+       <h2 class="h2">Месторасположение:</h2>
+        <dl>
+          <dt class="clr-1"><strong >Татуаж центр</strong><br>
+           г. Киев, ул. Гарматная 47
+		   <br>
+		   <span>Тел.:</span> +38 097 916 34 80			
+		  </dt>                   
+      </div>
+      <div class="col-15">
+        <h2 class="h2 p2">Мы на карте:</h2>
+        <div class="map img-border">
+     	<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ua/maps/ms?ie=UTF8&amp;hl=ru&amp;oe=UTF8&amp;msa=0&amp;msid=202648658140499974736.0004ecf033723c231ed04&amp;t=m&amp;ll=50.440233,30.433942&amp;spn=0.00205,0.003219&amp;z=17&amp;output=embed"></iframe><br />
+		<br><p>Просмотреть <a href="https://maps.google.com.ua/maps/ms?ie=UTF8&amp;hl=ru&amp;oe=UTF8&amp;msa=0&amp;msid=202648658140499974736.0004ecf033723c231ed04&amp;t=m&amp;ll=50.440233,30.433942&amp;spn=0.00205,0.003219&amp;z=17&amp;source=embed" style="text-align:left" class="link">Татуаж центр</a> на карте большего размера</p>	
+		</div>
+      </div>
+      <div class="col-16">
+        <h2 class="h2 p2">Записаться:</h2>
+		{% if errors %}
+			<ul>
+				{% for error in errors %}
+				<li>{{ error }}</li>
+				{% endfor %}
+			</ul>
+        {% endif %}
+        <form id="form" method="post" action="">
+		{% csrf_token %}
+          <fieldset>
+            <label>
+              <input type="text" name="subject" value="Ваше имя" onBlur="if(this.value=='') this.value='Ваше имя'" onFocus="if(this.value =='Ваше имя' ) this.value=''" />
+            </label>
+			<label>
+              <input type="text" style="border: 1px solid #3F3F3F; color: #6F6F6F;" required pattern="[0-9_-]{10}" placeholder="(___) ___ __ __" id="user_phone1" name= "phone" title="Формат: (096) 999 99 99"/>
+            </label>
+            <label>
+              <textarea name="message" onBlur="if(this.value==''){this.value='Сообщение'}" onFocus="if(this.value=='Сообщение'){this.value=''}">Сообщение</textarea>
+            </label>
+            <div class="btns">
+				<a href="javascript:{}" onclick="document.getElementById('form').reset();" class="link-1">Очистить</a> 
+				<a href="javascript:{}" onclick="document.getElementById('form').submit(); return false;" class="link-1">Отправить</a></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

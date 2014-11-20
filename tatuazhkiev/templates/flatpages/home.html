@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+	{{ flatpage.title }}
+{% endblock %}
+
+{% block libs %}
+	{{ block.super }}
+{% endblock %}
+
+{% block menu %}
+	{{ block.super }}
+{% endblock %}
+
+{% block slider %}
+	{{ block.super }}
+{% endblock %}
+
+{% block content %}
+<!--end of sldier section-->
+<section class="main__middle__container">
+  <div class="container">
+    <div class="row">
+      
+		{{ flatpage.content }}
+	  
+      <p class="text-center big-paragraph">Тратите слишком много денег и времени на косметику?</p>
+    </div>
+    <hr>
+    <div class="row text-center three-blocks">
+      <div class="col-md-4"> <img src="{% static 'images/pic1.jpg' %}" alt="image" class="img-rounded img-responsive">
+        <h3>ТАТУАЖ БРОВЕЙ</h3>
+        <hr>
+        <p>Quisque et aliquam mauris. Nunc id cursus quam. Curabitur aliquam ornare ante et commodo. Nulla eu erat id massa egestas eleifend. Sed id venenatis.</p>
+        <p><a class="btn btn-lg btn-primary" href="#" role="button">Подробнее</a></p>
+      </div>
+      <div class="col-md-4"> <img src="{% static 'images/pic2.jpg' %}" alt="image" class="img-rounded img-responsive">
+        <h3>ТАТУАЖ ГУБ</h3>
+        <hr>
+        <p>Quisque et aliquam mauris. Nunc id cursus quam. Curabitur aliquam ornare ante et commodo. Nulla eu erat id massa egestas eleifend. Sed id venenatis.</p>
+        <p><a class="btn btn-lg btn-primary" href="#" role="button">Подробнее</a></p>
+      </div>
+      <div class="col-md-4"> <img src="{% static 'images/pic3.jpg' %}" alt="image" class="img-rounded img-responsive">
+        <h3>ТАУТАЖ ВЕК</h3>
+        <hr>
+        <p>Quisque et aliquam mauris. Nunc id cursus quam. Curabitur aliquam ornare ante et commodo. Nulla eu erat id massa egestas eleifend. Sed id venenatis.</p>
+        <p><a class="btn btn-lg btn-primary" href="#" role="button">Подробнее</a></p>
+      </div>
+    </div>
+    <hr>
+    <hr>
+    <div class="row service-icons">
+      <div class="col-md-6"> <img src="{% static 'images/icons/ico1.png' %}" alt="icon" class="img-circle img-responsive">
+        <div class="col-md-10">
+          <h3>Donec nec justo eget felis facilisis fermentum. </h3>
+          <p class="orange">Phasellus ultrices nulla quis nibh. Quisque a lectus. </p>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <p><a class="btn btn-info btn-lg" href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" role="button">Подробнее</a></p>
+      </div>
+      <div class="col-md-6"> <img src="{% static 'images/icons/ico2.png' %}" alt="icon" class="img-circle img-responsive">
+        <div class="col-md-10">
+          <h3>Donec nec justo eget felis facilisis fermentum. </h3>
+          <p class="orange">Phasellus ultrices nulla quis nibh. Quisque a lectus. </p>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+        <p><a class="btn btn-info btn-lg" href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" role="button">Подробнее</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="row grey-info-block text-center">
+    <div class="container">
+      <h2 class="">ПРЕДВАРИТЕЛЬНАЯ ПРОЦЕДУРА ТАТУАЖА</h2>
+      <p class="">Предварительный татуаж - это новшество, которое позволит Вам увидеть в короткий срок все плюсы перманентного макияжа.</p>
+      <p><a class="btn btn-info" href="#" role="button">Заказать услугу</a><a class="btn btn-default" href="#" role="button">Подробнее</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block add_libs %}
+	{{ block.super }}
+	<script type="text/javascript">
+		$('.carousel').carousel({
+		  interval: 3500, // in milliseconds
+		  pause: 'none' // set to 'true' to pause slider on mouse hover
+		})
+	</script>
+{% endblock %}

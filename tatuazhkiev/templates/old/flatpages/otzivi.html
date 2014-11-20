@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+	{{ flatpage.title }}
+{% endblock %}
+{% block libs %}
+	{{ block.super }}
+	<script src="//vk.com/js/api/openapi.js" type="text/javascript" charset="windows-1251"></script>
+{% endblock %}
+{% block menu %}
+    <div class="subpages-nav">
+      <nav>
+	  <ul class="menu">
+          <li class="li-none"><a href="{{ first_item }}">Главная</a></li>
+          <li><a href="{{ second_item }}">Фото</a></li>
+		  <li><a href="{{ third_item }}">Цены</a></li>
+          <li class="current li-left li-none"><a href="{{ forth_item }}">Отзывы</a></li>
+          <li><a  href="{{ five_item }}" class="moveup" >Вопрос<br>ответ</a></li>
+          <li><a href="{{ six_item }}">Контакты</a></li>
+      </ul>
+        <h1><a class="modalbox" href="#inline"><img src="{% static 'images/logo.png' %}" alt="Таутаж логотип"></a></h1>
+      </nav>
+    </div>
+ {% endblock %}
+ {% block content %}
+<!--==============================content================================-->
+<section id="content">
+  <div class="pad-1">
+  
+		<script type="text/javascript">
+		  VK.init({apiId: 4094753, onlyWidgets: true});
+		</script>
+		
+		<br>
+		{{ flatpage.content }}
+		<div id="vk_comments"></div>
+		<script type="text/javascript">
+		VK.Widgets.Comments("vk_comments", {limit: 10, width: "720", attach: "*"});
+		</script>
+  </div>
+</section>
+{% endblock %}

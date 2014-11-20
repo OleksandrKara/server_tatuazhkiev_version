@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+	{{ flatpage.title }}
+{% endblock %}
+
+{% block libs %}
+	{{ block.super }}
+	<style>
+		#feedback {
+			color: #1c6107;
+		}
+		#feedback ul {
+			padding-left: 0;
+		}
+		#feedback ul li {
+			list-style: none;
+		}
+	</style>
+{% endblock %}
+
+{% block menu %}
+	{{ block.super }}
+{% endblock %}
+
+{% block slider %}{% endblock %}
+
+{% block content %}
+<section class="main__middle__container">
+  <section class="recent-posts">
+    <div class="container">
+      <h2 class="text-center"><span>Articles</span></h2>
+		{{ flatpage.content }}
+				
+		{% for post in object_list %}
+			<a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
+			<p>{{ post.datetime }}</p>
+			<p>{{ post.short_description }}</p>
+			<a href="{{ post.get_absolute_url }}">More...</a>
+			{% empty %}
+			<p>Empty</p>
+		{% endfor %}
+		<br><br>
+    </div>
+  </section>
+</section>
+{% endblock %}
+
+{% block add_libs %}
+	{{ block.super }}
+{% endblock %}

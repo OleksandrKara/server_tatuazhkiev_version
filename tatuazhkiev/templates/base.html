@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<meta charset="utf-8">-->
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+	<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+	<meta name="description" content="{% block meta_description %}{% endblock %}">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block libs %}
+		<!-- Bootstrap -->
+		<link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100&subset=cyrillic,cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+		<link href="{% static 'css/bootstrap/style.css' %}" rel="stylesheet">				
+		
+		
+		
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+			<![endif]-->
+	{% endblock %}	
+</head>
+<body>
+
+<header class="main__header">
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation"> 
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span> 
+			<span class="icon-bar"></span> 
+			<span class="icon-bar"></span> </button>
+        <h1 class="navbar-brand"><a href="/">Permanent make-up</a></h1>
+      </div>
+		
+{% block menu %}
+		<!-- Collect the nav links, forms, and other content for toggling 
+		second_item third_item forth_item five_item six_item-->
+		<div class="navbar-right navbar-collapse in" id="bs-example-navbar-collapse-1" style="height: auto;">
+			<ul class="nav navbar-nav">
+			{% for menu_item in menu.top.items %}
+				{% ifequal request.get_full_path menu_item.url %}
+					<li class="active">
+					<a href="{{ menu_item.url }}">{{ menu_item.name }}</a></li>
+				
+				{% else %}
+				
+				<!--sub menu -->
+				{% ifequal menu_item.url "#" %}							
+					<li class="dropdown"> 
+					<a href="{{ menu_item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ menu_item.name }}</a>
+						<ul class="dropdown-menu">
+						  {% for sub_menu_item in menu.submenu.items %}
+						  <li><a href="{{ sub_menu_item.url }}">{{ sub_menu_item.name }}</a></li>
+						  {% endfor %}
+						</ul>
+					</li>
+				{% else %}				
+				<!--sub menu -->							
+					<li>					
+					<a href="{{ menu_item.url }}">{{ menu_item.name }}</a></li>								
+				{% endifequal %}
+			{% endifequal %}
+			{% endfor %}
+			</ul>
+		</div>
+			  <!--
+			  <div class="navbar-right navbar-collapse in" id="bs-example-navbar-collapse-1" style="height: auto;">
+				<ul class="nav navbar-nav">
+				  <li class="active"><a href="{{ first_item }}">главная</a></li>
+				  <li class="dropdown"> <a href="{{ second_item }}" class="dropdown-toggle" data-toggle="dropdown">Статьи</a>
+					<ul class="dropdown-menu">
+					  <li><a href="#">статья 1</a></li>
+					  <li><a href="#">статья 2</a></li>
+					</ul>
+				  </li>
+				  <li><a href="{{ third_item }}">фото</a></li>
+				  <li><a href="{{ forth_item }}">цены</a></li>
+				  <li><a href="{{ five_item }} ">контакты</a></li>
+				</ul>
+			  </div>-->
+			  <!-- /.navbar-collapse -->
+{% endblock %}
+    </nav>
+  </div>
+</header>
+
+
+{% block slider %}
+<section class="slider">
+  <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel"> 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+      <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active"> <img data-src="images/slider/slider1.jpg" alt="First slide" src="{% static 'images/slider/slider1.jpg' %} ">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Татуаж <span>бровей</span></h1>
+            <p>Перманентній макияж бровей</p>
+            <p><a class="btn btn-primary" href="index.html#" role="button">Заказать услугу</a><a class="btn btn-default" href="index.html#" role="button">Подробнее</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="item"> <img data-src="images/slider/slider2.jpg" alt="Second slide" src="{% static 'images/slider/slider2.jpg' %}">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Татуаж <span>век</span> глаз</h1>
+            <p>Перманентній макияж глаз</p>
+            <p><a class="btn btn-primary" href="index.html#" role="button">Заказать услугу</a><a class="btn btn-default" href="index.html#" role="button">Подробнее</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="item"> <img data-src="images/slider/slider3.jpg" alt="First slide" src="{% static 'images/slider/slider3.jpg' %}">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1><span>Татуаж</span> губ</h1>
+            <p>Перманентній макияж губ</p>
+            <p><a class="btn btn-primary" href="index.html#" role="button">Заказать услугу</a><a class="btn btn-default" href="index.html#" role="button">Подробнее</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="index.html#myCarousel" data-slide="prev">
+		<span class="glyphicon carousel-control-left"></span>
+	</a> 
+		<a class="right carousel-control" href="index.html#myCarousel" data-slide="next">
+		<span class="glyphicon carousel-control-right"></span>
+	</a> 
+	</div>
+</section>
+{% endblock %}
+	
+{% block content %}{% endblock %}
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h3>О нас</h3>
+        <p>We strive to deliver a level of service that exceeds the expectations of our customers. <br>
+          <br>
+          If you have any questions about our products or services, please do not hesitate to contact us. We have friendly, knowledgeable representatives available seven days a week to assist you.</p>
+      </div>
+      <div class="col-md-3">
+        <h3>Твитер</h3>
+        <p><span>Tweet</span> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#">@You</a><br>
+          Etiam egestas, ipsum posuere accumsan sollicitudin, nulla mauris volutpat sem, sit amet rutrum risus. </p>
+        <p><span>Tweet</span> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#">@You</a><br>
+          Quisque porta tellus vitae adipiscing molestie. Mauris et lacus blandit, malesuada.</p>
+      </div>
+      <div class="col-md-3">
+        <h3>Рассылка</h3>
+        <p>Subscribe to our mailing list for offers, news updates and more!</p>
+        <br>
+        <form action="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" method="post" class="form-inline" role="form">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">your email:</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="your email:">
+          </div>
+          <button type="submit" class="btn btn-primary">subscribe</button>
+        </form>
+      </div>
+      <div class="col-md-3">
+        <h3>Мы в сетях</h3>
+        <p>123 Business Way<br>
+          San Francisco, CA 94108<br>
+          USA<br>
+          <br>
+          Phone: (888) 123-4567<br>
+          Fax: (887) 123-4567<br>
+          <br>
+        </p>
+        <div class="social__icons"> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" class="socialicon socialicon-twitter"></a> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" class="socialicon socialicon-facebook"></a> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" class="socialicon socialicon-google"></a> </div>
+      </div>
+    </div>
+    <hr>
+    <p class="text-center">© Copyright ABC Company. All Rights Reserved.</p>
+  </div>
+</footer>
+
+{% block add_libs %}
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script type="text/javascript" src="{% static 'js/jquery/jquery.min.js' %}"></script> 
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script> 
+	<script type="text/javascript">
+			$(document).ready(function(){
+				//Check to see if the window is top if not then display button
+				$(window).scroll(function(){
+					if ($(this).scrollTop() > 700) {
+						$('.scrollToTop').fadeIn();
+					} else {
+						$('.scrollToTop').fadeOut();
+					}
+				});
+			 
+				//Click event to scroll to top
+				$('.scrollToTop').click(function(){
+					$('html, body').animate({scrollTop : 0},800);
+					return false;
+				});
+			 
+			});
+		</script>
+{% endblock %}
+
+<a href="#" class="scrollToTop"></a>
+
+</body></html>

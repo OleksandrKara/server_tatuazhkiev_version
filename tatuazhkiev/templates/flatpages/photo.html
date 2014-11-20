@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load thumbnail %}
+
+{% block title %}
+	Татуаж в Киеве - Фото татуаж
+{% endblock %}
+
+{% block libs %}
+	<link rel="stylesheet" href="{% static 'css/galery/magnific-popup.css' %}">
+	{{ block.super }}
+{% endblock %}
+
+{% block menu %}
+	{{ block.super }}
+{% endblock %}
+
+{% block slider %}{% endblock %}
+
+{% block content %}
+<section class="main__middle__container">
+  <div class="container recent-posts">
+    <h2 class="text-center"><span>Фото</span></h2>
+  </div>
+  <div class="container">
+    <div id="portfolio" class="row no_padding title__block nothing no-margin">
+      <ul class="list-unstyled controls">
+        <li class="filter active" data-filter="all">Показать все фото</li>
+        <li class="filter" data-filter="br">Брови</li>
+        <li class="filter" data-filter="gu">Губы</li>
+        <li class="filter" data-filter="gl">Глаза</li>
+      </ul>
+	 
+		<ul id="Grid" class="gallery">
+			{% for fotoGl in fotosGl %}
+				<li class="mix gl col-sm-4 mix_all" style="display: block; opacity: 1;">
+					<a href="{{  fotoGl.image_location.url }}">
+						{% thumbnail fotoGl.image_location "379x253" crop="50%" as small_foto %}
+							<img alt="" src="{{  small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}" class="img-responsive">
+						 {% endthumbnail %}
+						<span class="text">{{ fotoGl.comment_first }}<span>{{ fotoGl.comment_second }}</span></span>
+					</a>
+				</li>
+			{% endfor %}
+			
+			{% for fotoGu in fotosGu %}
+				<li class="mix gu col-sm-4 mix_all" style="display: block; opacity: 1;">
+					<a href="{{  fotoGu.image_location.url }}">
+						{% thumbnail fotoGu.image_location "379x253" crop="50%" as small_foto %}
+							<img alt="" src="{{  small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}" class="img-responsive">
+						 {% endthumbnail %}
+						<span class="text">{{ fotoGu.comment_first }}<span>{{ fotoGu.comment_second }}</span></span>
+					</a>
+				</li>
+			{% endfor %}
+			
+			{% for fotoBr in fotosBr %}
+				<li class="mix br col-sm-4 mix_all" style="display: block; opacity: 1;">
+					<a href="{{  fotoBr.image_location.url }}">
+						{% thumbnail fotoBr.image_location "379x253" crop="50%" as small_foto %}
+							<img alt="" src="{{  small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}" class="img-responsive">
+						 {% endthumbnail %}
+						<span class="text">{{ fotoBr.comment_first }}<span>{{ fotoBr.comment_second }}</span></span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+    </div>
+    <h2>Portfolio Text</h2>
+    <hr>
+    <div class="one_third">
+      <h4>1/3</h4>
+      <p>Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis</p>
+    </div>
+    <div class="one_third">
+      <h4>1/3</h4>
+      <p>Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis</p>
+    </div>
+    <div class="one_third column-last">
+      <h4>1/3</h4>
+      <p>Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis</p>
+    </div>
+    <div class="dc_clear"></div>
+    <br>
+    <br>
+    <br>
+  </div>
+</section>
+{% endblock %}
+
+{% block add_libs %}
+	{{ block.super }}
+	<script src="{% static 'js/jquery/jquery.mixitup.min.js' %}"></script> 
+	<script src="{% static 'js/jquery/jquery.magnific-popup.js' %}"></script> 
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Start work gallery
+			$('#Grid').mixitup();
+			});
+			$('.gallery').each(function() { // the containers for all your galleries
+				$(this).magnificPopup({
+					delegate: 'a', // the selector for gallery item
+					type: 'image',
+					gallery: {
+					  enabled:true
+					}
+				});
+			});
+		</script>
+{% endblock %}
