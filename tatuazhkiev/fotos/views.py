@@ -11,13 +11,23 @@ def xhr_test(request):
 	email = request.POST.get('email')
 	subject = request.POST.get('subject')
 	message = request.POST.get('message')
-	
-	send_mail(
+	phone = request.POST.get('phone')
+    
+	if not request.POST.get('email'):
+		send_mail(
 		"Please call me back!",
-        "Name: "+ name + "\nE-mail: " + email + "\nSubject: " + subject + "\nMessage: " + message,
+		"Name: "+ name + "\nPhone: " + phone,
 		request.POST.get('olexandr.kara@gmail.com'),
-                ['kiev.tatuazh@gmail.com'],
-	)
+			['kiev.tatuazh@gmail.com'],
+		)
+	
+	if not request.POST.get('phone'):
+		send_mail(
+			"Please write me back!",
+			"Name: "+ name + "\nE-mail: " + email + "\nSubject: " + subject + "\nMessage: " + message,
+			request.POST.get('olexandr.kara@gmail.com'),
+					['kiev.tatuazh@gmail.com'],
+		)
 	
 	message = True
 	return HttpResponse(message)
