@@ -1050,12 +1050,12 @@ h2.text-center {
 /*Scroll to the top*/
 .scrollToTop{
     width:45px;
-    height:62px;    
+    height:71px;    
     position:fixed;
-    top:93%;
-    right:20px;
+    top:87%;
+    right:3%;
     display:none;
-    background: url('../../images/icons/top.png') no-repeat 0px 20px;
+    background: url('../../images/icons/top1.png') no-repeat 0px 20px;
 }
 .scrollToTop:hover{
     text-decoration:none;
