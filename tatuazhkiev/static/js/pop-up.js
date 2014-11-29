@@ -1,6 +1,8 @@
 ﻿//basic fancybox setup
 	function validateName(name) { 
-		var reg = /^[A-ZА-ЯІЇЄҐ]{1}[a-zа-яіїєґ]{3,}(\s{1}[A-ZА-ЯІЇЄҐ]{1}[a-zа-яіїєґ]{3,}){0,2}$/;
+		//var reg = /^[A-ZА-ЯІЇЄҐ]{1}[a-zа-яіїєґ]{3,}(\s{1}[A-ZА-ЯІЇЄҐ]{1}[a-zа-яіїєґ]{3,}){0,2}$/;
+		//TODO
+		var reg = /[A-Za-zа-яіїєґА-ЯІЇЄҐ]+/;
 	    return reg.test(name);
 	}
 
@@ -17,6 +19,9 @@
 			var phonelen = phoneval.length;
 			var namevalid = validateName(nameval);
 			
+			//TODO
+			//Does not work
+			//.error css class creation needed
 			if(namevalid == false) {
 				$("#name").addClass("error");
 			}

@@ -13,20 +13,6 @@ div.comment h3 {
     font-weight: normal;
 }
 
-.user_phone {
-	position: relative;
-}
-.user_phone:before {
-	content: "+38";
-	display: block;
-	height: 40px;
-	color: #363636;
-	position: absolute;
-	top: 27px;
-	left: 4px;
-	font-size: 19px;
-}
-
 .phone_form {
 	width: 300px;
 	margin: 0px auto;

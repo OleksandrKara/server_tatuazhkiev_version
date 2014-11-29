@@ -205,26 +205,31 @@
 	<script type="text/javascript" src="{% static 'js/jquery/jquery.maskedinput.min.js' %}"></script>
 		
 	<!-- Include all compiled plugins (below), or include individual files as needed --> 
-	<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script> 
+	<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
 	<script type="text/javascript">
-			$(document).ready(function(){
-				//Check to see if the window is top if not then display button
-				$(window).scroll(function(){
-					if ($(this).scrollTop() > 700) {
-						$('.scrollToTop').fadeIn();
-					} else {
-						$('.scrollToTop').fadeOut();
-					}
-				});
-			 
-				//Click event to scroll to top
-				$('.scrollToTop').click(function(){
-					$('html, body').animate({scrollTop : 0},800);
-					return false;
-				});
-			 
+		jQuery(function($){	   
+		   $("#user_phone").mask("(999) 999-9999");
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//Check to see if the window is top if not then display button
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 700) {
+					$('.scrollToTop').fadeIn();
+				} else {
+					$('.scrollToTop').fadeOut();
+				}
 			});
-		</script>
+		 
+			//Click event to scroll to top
+			$('.scrollToTop').click(function(){
+				$('html, body').animate({scrollTop : 0},800);
+				return false;
+			});
+		 
+		});
+	</script>
 {% endblock %}
 
 <a href="#" class="scrollToTop"></a>
@@ -236,21 +241,18 @@
 			<h3>и мы вам перезвоним.</h3>
 			</div>
 		<br>
-			<form id="contact" name="contact" action="#" method="post" class="phone_form">
+			<form role="form" id="contact" name="contact" action="" method="post" class="phone_form">
 					{% csrf_token %}
-					<label for="name">Ваше имя:</label>
-					<input type="name" id="name" name="name" class="txt" autofocus="autofocus">
+						<label for="name">Ваше имя:</label>
+						<input name="name" required type="text" id="name" class="txt form-control" placeholder="Ваше имя: *" autofocus="autofocus">
 					<br>
 					<div class="user_phone">
-					<label for="user_phone">Телефон:</label>
-					<input type="phone" required pattern="[0-9_-]{10}" placeholder="(___) ___ __ __" id="user_phone" name= "phone" title="Формат: (096) 999 99 99" />
+						<label for="user_phone">Телефон:</label>
+						<input name= "phone" required type="text" id="user_phone" class="form-control" placeholder="Ваш телефон: *" title="Формат: (096) 999 99 99" />
 					</div>
 					<br>
-					<a id="send" href="#" class="dc_gradient_button large orange">Отправить</a>
+					<input id="send" class="btn btn-primary" type="submit" value="Отправить">					
 			</form>
 		</div>
 		<!-- hidden inline form -->
-
-
-
 </body></html>
