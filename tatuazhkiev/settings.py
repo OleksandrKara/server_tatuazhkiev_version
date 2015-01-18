@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 	'tatuazhkiev.fotos',
+	'tatuazhkiev.flatpages',
 	'sorl.thumbnail',
 	'django.contrib.sitemaps',
 	'django.contrib.flatpages',

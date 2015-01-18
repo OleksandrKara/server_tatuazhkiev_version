@@ -318,6 +318,30 @@ button.btn-primary:focus {
 	font-weight: 100;
 	color: #fff;
 }
+
+.carousel-caption h4 {
+	font-size: 80px;
+	line-height: 80px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 100;
+	color: #fff;
+}
+
+.h1-style{
+	font-size: 40px;
+	line-height: 0px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 100;
+}
+
+.h1-style span{
+	color: #ec6d07;
+}
+
+.carousel-caption h4 span {
+	color: #ec6d07;
+}
+
 .carousel-caption h1 span {
 	color: #ec6d07;
 }
@@ -492,6 +516,12 @@ footer button.btn-primary:focus {
 	font-size: 40px;
 	line-height: 40px;
 }
+
+.carousel-caption h4 {
+	font-size: 40px;
+	line-height: 40px;
+}
+
 }
 @media(max-width:1400px) {
 .carousel-control {

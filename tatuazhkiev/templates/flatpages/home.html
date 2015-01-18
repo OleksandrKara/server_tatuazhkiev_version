@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block meta_keywords %}
-	"{{ block.super }}"
+	"{{ block.super }} {{ flatpage.extendedflatpage.meta_keywords }}"
 {% endblock %}
 
 {% block meta_description %}
-	"{{ block.super }}"
+	"{{ block.super }} {{ flatpage.extendedflatpage.meta_description }}"
 {% endblock %}
 
 {% block title %}
