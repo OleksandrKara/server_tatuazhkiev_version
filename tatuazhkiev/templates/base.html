@@ -38,21 +38,17 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
-			<span class="sr-only">Toggle navigation</span>
+			<span class="sr-only">Меню сайта</span>
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span> </button>
-        <h3 class="navbar-brand"><a href="/">Татуаж в Киеве</a></h3>
-		<br>
-		<div class="call_back">
-			<a class="dc_awb_medium dc_awb_orange dc_flat modalbox" href="#inline">Заказать звонок</a>
-		</div>
+        <img src="{% static 'images/logo.png' %}" height="100px" alt="Анна Кара татуаж лого">
       </div>
 		
 {% block menu %}
 		<!-- Collect the nav links, forms, and other content for toggling 
 		second_item third_item forth_item five_item six_item-->
-		<div class="navbar-right navbar-collapse in" id="bs-example-navbar-collapse-1" style="height: auto;">
+		<div class="navbar-right navbar-collapse in" id="bs-example-navbar-collapse-1" style="height: auto; margin-top: 3%;">
 			<ul class="nav navbar-nav">
 			{% for menu_item in menu.top.items %}
 				{% ifequal request.get_full_path menu_item.url %}
