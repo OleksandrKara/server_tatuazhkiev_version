@@ -24,9 +24,9 @@ def faq_handler(request):
     return render_to_response('faq.html')
 
 def photo_handler(request):
-    fotosGl = Foto.objects.filter(type="Gl").order_by('date')
-    fotosGu = Foto.objects.filter(type="Gu").order_by('date')
-    fotosBr = Foto.objects.filter(type="Br").order_by('date')
+    fotosGl = Foto.objects.filter(type="Gl").order_by('-date')
+    fotosGu = Foto.objects.filter(type="Gu").order_by('-date')
+    fotosBr = Foto.objects.filter(type="Br").order_by('-date')
     return render_to_response(template_name='flatpages/photo.html',
 	                          dictionary={'fotosGl' : fotosGl, 'fotosGu': fotosGu, 'fotosBr': fotosBr},
 							  context_instance=RequestContext(request))
