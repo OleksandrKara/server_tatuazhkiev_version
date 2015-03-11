@@ -152,41 +152,49 @@
     <div class="row">
       <div class="col-md-3">
         <h3>О нас</h3>
-		<p>Мы стремимся обеспечить уровень сервиса, который превосходит ожидания наших клиентов.
+		<p>Это персональный сайт мастера перманентного макияжа, Анны Кара.
 		<br>
-		Если у вас есть какие-либо вопросы о наших продуктах или услугах, пожалуйста, не стесняйтесь обращаться к нам. У нас есть целых семь дней в неделю, чтобы помочь вам.
+		Если у вас есть какие-либо вопросы о продуктах или услугах, пожалуйста, не стесняйтесь обращаться к нам. У нас есть целых семь дней в неделю, чтобы помочь вам.
 		</p>
 		</div>
       <div class="col-md-3">
-        <h3>Твитер</h3>
-        <p><span>Tweet</span> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#">@You</a><br>
-          Etiam egestas, ipsum posuere accumsan sollicitudin, nulla mauris volutpat sem, sit amet rutrum risus. </p>
-        <p><span>Tweet</span> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#">@You</a><br>
-          Quisque porta tellus vitae adipiscing molestie. Mauris et lacus blandit, malesuada.</p>
+        <h3>Вконтакте</h3>
+		<script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
+		<div id="vk_groups"></div>
+		<script type="text/javascript">
+		VK.Widgets.Group("vk_groups", {mode: 0, width: "195", height: "241", color1: 'FFFFFF', color2: '2B587A', color3: '#e66a06'}, 48361848);
+		</script>
       </div>
       <div class="col-md-3">
-        <h3>Рассылка</h3>
-        <p>Subscribe to our mailing list for offers, news updates and more!</p>
+        <h3>Заявка</h3>
+        <p>Введите свои данные, чтобы мы смогли Вам перезвонить</p>
         <br>
-        <form action="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" method="post" class="form-inline" role="form">
-          <div class="form-group">
-            <label class="sr-only" for="exampleInputEmail2">your email:</label>
-            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="your email:">
-          </div>
-          <button type="submit" class="btn btn-primary">subscribe</button>
-        </form>
+		<p id="feedback"></p>
+        <form role="form" id="contact-form" name="contact-form" method="post" action="" class="contact-form">
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="exampleInputEmail1">Ваше имя: *</label>
+              <input required="" type="text" class="form-control" id="name" name="name" placeholder="Ваше имя: *">
+            </div>
+			<div class="form-group col-md-6">
+              <label class="sr-only" for="exampleInputEmail1">Email: *</label>
+              <input required="" type="email" class="form-control" id="email" name="email" placeholder="Email: *">
+            </div>
+			<input id="submit-button" type="submit" class="btn btn-primary" value="Отправить">
+		</form>
       </div>
       <div class="col-md-3">
-        <h3>Мы в сетях</h3>
-        <p>123 Business Way<br>
-          San Francisco, CA 94108<br>
-          USA<br>
+        <h3>Контакты</h3>
+        <p>ул. Гарматная 47<br>
+          г. Киев, 03058<br>
+          Украина<br>
           <br>
-          Phone: (888) 123-4567<br>
-          Fax: (887) 123-4567<br>
+          (097) 916-3480<br>
           <br>
         </p>
-        <div class="social__icons"> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" class="socialicon socialicon-twitter"></a> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" class="socialicon socialicon-facebook"></a> <a href="http://www.htmlpreviews.com/cloud/beauty-salon/eterations3/index.html#" class="socialicon socialicon-google"></a> </div>
+        <div class="social__icons"> 
+			<a href="https://vk.com/tatuazh.kiev" class="socialicon socialicon-vk" target="_blank"></a> 
+			<a href="https://vk.com/tatuazh.kiev" class="socialicon socialicon-facebook" target="_blank"></a> 
+			<a href="https://vk.com/tatuazh.kiev" class="socialicon socialicon-google" target="_blank"></a> </div>
       </div>
     </div>
     <hr>
@@ -229,6 +237,41 @@
 		 
 		});
 	</script>
+	
+	<script type="text/javascript">
+				function send_special_order() {
+					var data1 = $('#name').val();
+					var data2 = $('#email').val();
+			$.ajax({
+				type: "POST",
+				url: "/xhr_test",
+				dataType : "json",
+				data: ( {"name" : data1, "email" : data2} ) ,
+				   success: function() {
+								   
+				   },
+							   complete: function(){
+									$('#feedback').append('<p>Спасибо за отправку нам сообщения. Наши специалисты свяжутся с Вами как можно скорее.</p><p>Детали вашего сообщения ниже:</p>\n\
+									<ul>\n\
+										<li>Имя: <b>' + data1 + '</b></li>\n\
+										<li>Email: <b>' + data2 + '</b></li>\n\
+									</ul>\n\
+									<p>Если вы хотите изменить информацию нажмите кнопку:\n\
+									<p><a href="#" id="send-more" class="btn btn-primary">Изменить сообщение</a></p>');
+									$('#contact-form').slideUp();
+									$('#send-more').click(function(e){
+										e.preventDefault()
+										$('#contact-form').slideDown();
+										$('#feedback').html('');
+									});
+							   }
+			});
+	}
+				$('#contact-form').submit(function() {
+					send_special_order();
+					return false;
+				});
+			</script>
 {% endblock %}
 
 <a href="#" class="scrollToTop"></a>

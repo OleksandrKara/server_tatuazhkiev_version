@@ -81,7 +81,7 @@ h5 {
 	width: 100%;
 }
 .row {
-	padding: 75px 0;
+	padding: 25px 0;
 }
 .container .row:first-child {
 	padding: 45px 0;
@@ -93,8 +93,8 @@ p.big-paragraph {
 }
 /* grey-info-block */
 .grey-info-block {
-	background: url('../../images/big_line_bg.jpg') no-repeat;
-	background-size: 100% 100%;
+	/*background: url('../../images/big_line_bg.jpg') no-repeat;
+	background-size: 100% 100%;*/
 	width: 100%;
 	margin: 0;
 }
@@ -409,6 +409,10 @@ button.btn-primary:focus {
 }
 .socialicon-twitter {
 	background: url('../../images/social/twitter.png') no-repeat;
+}
+
+.socialicon-vk {
+	background: url('../../images/social/vk.png') no-repeat;
 }
 .socialicon-facebook {
 	background: url('../../images/social/facebook.png') no-repeat;
@@ -1088,7 +1092,7 @@ h2.text-center {
     width:45px;
     height:71px;    
     position:fixed;
-    top:87%;
+    top:82%;
     right:3%;
     display:none;
     background: url('../../images/icons/top1.png') no-repeat 0px 20px;

@@ -16,7 +16,7 @@ class Foto(models.Model):
 	
 	def image_tag(self):
 		if self.image_location:
-			return u'<img src="%s" width="100"/>' % self.image_location.url
+			return u'<img src="%s" style="width:100px;"/>' % self.image_location.url
 		else:
 			return '(none)'
 	image_tag.short_description = 'Image'
