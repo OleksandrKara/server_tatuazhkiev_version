@@ -166,20 +166,17 @@
 		</script>
       </div>
       <div class="col-md-3">
-        <h3>Заявка</h3>
+        <h3>Звонок</h3>
         <p>Введите свои данные, чтобы мы смогли Вам перезвонить</p>
-        <br>
-		<p id="feedback"></p>
-        <form role="form" id="contact-form" name="contact-form" method="post" action="" class="contact-form">
-            <div class="form-group col-md-6">
-              <label class="sr-only" for="exampleInputEmail1">Ваше имя: *</label>
-              <input required="" type="text" class="form-control" id="name" name="name" placeholder="Ваше имя: *">
-            </div>
-			<div class="form-group col-md-6">
-              <label class="sr-only" for="exampleInputEmail1">Email: *</label>
-              <input required="" type="email" class="form-control" id="email" name="email" placeholder="Email: *">
-            </div>
-			<input id="submit-button" type="submit" class="btn btn-primary" value="Отправить">
+		<p id="footer_feedback"></p>
+        <form role="form" id="footer_form" name="footer_form" method="post" action="" class="footer_form">            
+			<div class="form-group">
+				<input required="" type="text" class="form-control" id="name" name="name" placeholder="Ваше имя: *" />
+			</div>
+			<div class="form-group">
+				<input name = "phone" required type="text" id="user_footer_phone" class="form-control" placeholder="Ваш телефон: *" title="Формат: (096) 999 99 99" />
+			</div>
+			<input id="submit-footer-button" type="submit" class="btn btn-primary" value="Отправить">
 		</form>
       </div>
       <div class="col-md-3">
@@ -217,6 +214,9 @@
 		jQuery(function($){	   
 		   $("#user_phone").mask("(999) 999-9999");
 		});
+		jQuery(function($){	   
+		   $("#user_footer_phone").mask("(999) 999-9999");
+		});
 	</script>
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -239,39 +239,39 @@
 	</script>
 	
 	<script type="text/javascript">
-				function send_special_order() {
-					var data1 = $('#name').val();
-					var data2 = $('#email').val();
-			$.ajax({
-				type: "POST",
-				url: "/xhr_test",
-				dataType : "json",
-				data: ( {"name" : data1, "email" : data2} ) ,
-				   success: function() {
-								   
-				   },
-							   complete: function(){
-									$('#feedback').append('<p>Спасибо за отправку нам сообщения. Наши специалисты свяжутся с Вами как можно скорее.</p><p>Детали вашего сообщения ниже:</p>\n\
-									<ul>\n\
-										<li>Имя: <b>' + data1 + '</b></li>\n\
-										<li>Email: <b>' + data2 + '</b></li>\n\
-									</ul>\n\
-									<p>Если вы хотите изменить информацию нажмите кнопку:\n\
-									<p><a href="#" id="send-more" class="btn btn-primary">Изменить сообщение</a></p>');
-									$('#contact-form').slideUp();
-									$('#send-more').click(function(e){
-										e.preventDefault()
-										$('#contact-form').slideDown();
-										$('#feedback').html('');
-									});
-							   }
-			});
-	}
-				$('#contact-form').submit(function() {
-					send_special_order();
-					return false;
-				});
-			</script>
+		function send_form_from_footer() {
+			var data1 = $('#name').val();
+			var data2 = $('#user_footer_phone').val();
+		$.ajax({
+		type: "POST",
+		url: "/xhr_test",
+		dataType : "json",
+		data: ( {"name" : data1, "phone" : data2} ) ,
+		   success: function() {
+						   
+		   },
+					   complete: function(){
+							$('#footer_feedback').append('<p>Спасибо за отправку нам сообщения. Наши специалисты свяжутся с Вами как можно скорее.</p><p>Детали вашего сообщения ниже:</p>\n\
+							<ul>\n\
+								<li>Имя: <b>' + data1 + '</b></li>\n\
+								<li>Телефон: <b>' + data2 + '</b></li>\n\
+							</ul>\n\
+							<p>Если вы хотите изменить информацию нажмите кнопку:\n\
+							<p><a href="#" id="send-more-footer" class="btn btn-primary">Изменить сообщение</a></p>');
+							$('#footer_form').slideUp();
+							$('#send-more-footer').click(function(e){
+								e.preventDefault()
+								$('#footer_form').slideDown();
+								$('#footer_feedback').html('');
+							});
+					   }
+		});
+		}
+		$('#footer_form').submit(function() {
+			send_form_from_footer();
+			return false;
+		});
+	</script>
 {% endblock %}
 
 <a href="#" class="scrollToTop"></a>
