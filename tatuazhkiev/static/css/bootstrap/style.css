@@ -22,6 +22,7 @@ header.main__header {
 header.with-boxed {
 	height: 500px;
 }
+
 /*Typography*/
 a {
 	color: #ffa02f;
@@ -94,7 +95,10 @@ p.big-paragraph {
 div#vk_group_with_name{
 	display: none;
 }
-
+#vk_comments,
+#vk_comments iframe {
+    width: 100% !important;
+}
 /* grey-info-block */
 .grey-info-block {
 	/*background: url('../../images/big_line_bg.jpg') no-repeat;
