@@ -150,5 +150,5 @@ TINYMCE_DEFAULT_CONFIG = {
     'relative_urls': False,
 }
 
-DISQUS_API_KEY = '1gQ6cJXWnQmgoDvRaropblMpW7vLTFbu0eYcb3XyMbDj4DjgzDPjhM7CxyQZ3aVD'
+DISQUS_API_KEY = 'uYCrQucNzezmexT8uLj2mEA6Rxi1gf2sSqipmmy7wl8t3jtYfL6I4ICeeDozNgEg'
 DISQUS_WEBSITE_SHORTNAME = 'tatuazhkiev.com.ua'
