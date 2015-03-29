@@ -50,9 +50,7 @@
 		
 		<div id="vk_comments"></div>
 		<script type="text/javascript">
-			/*wall.getComments(owner_id = -48361848, );*/
-			VK.Api.call('widgets.getComments', {widget_api_id: "-48361848", url: "https://vk.com/topic-48361848_28946147"}, function(r){ $('body').html(r.response.count);});
-			VK.Widgets.Comments("vk_comments", {limit: 2, attach: "*", pageUrl: "https://vk.com/topic-48361848_28946147"});
+			VK.Widgets.Comments("vk_comments", {limit: 2, attach: "*", autoPublish: 1, pageUrl: "https://vk.com/topic-48361848_28946147"}, 28946147);
 		</script>
 		
     </div>
