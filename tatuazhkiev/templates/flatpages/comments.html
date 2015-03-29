@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load disqus_tags %}
 {% block meta_keywords %}
 	"{{ block.super }} {{ flatpage.extendedflatpage.meta_keywords }}"
 {% endblock %}
@@ -40,7 +41,6 @@
       <h2 class="text-center"><span>Ваши отзывы</span></h2>
 		{{ flatpage.content }}
 		
-		{% load disqus_tags %}
 		{% disqus_dev %}
 		{% disqus_show_comments %}
 		
