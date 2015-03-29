@@ -91,6 +91,10 @@ p.big-paragraph {
 	font-weight: 300;
 	font-size: 18px;
 }
+div#vk_group_with_name{
+	display: none;
+}
+
 /* grey-info-block */
 .grey-info-block {
 	/*background: url('../../images/big_line_bg.jpg') no-repeat;
@@ -579,6 +583,12 @@ footer button.btn-primary:focus {
 .service-icons .col-md-10 {
 	padding-left: 0;
 }
+div#vk_group_with_friends{
+	display: none;
+}
+div#vk_group_with_name{
+	display: inline;
+}
 }
  @media(max-width:880px) {
 .navbar-default .navbar-nav>li>a {
@@ -656,6 +666,12 @@ footer button.btn-primary:focus {
 }
 header.with-boxed {
 	height: auto;
+}
+div#vk_group_with_friends{
+	display: inline;
+}
+div#vk_group_with_name{
+	display: none;
 }
 }
 @media(max-width:500px) {
