@@ -22,9 +22,9 @@ SECRET_KEY = '06&(uw0lsobw9(3i@ajnfuf_lm#wbj+v6ph+)!g@7s(+tm84*o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
-THUMBNAIL_DEBUG = True
+THUMBNAIL_DEBUG = False
 
 ALLOWED_HOSTS = ['tatuazhkiev.com.ua']
 
