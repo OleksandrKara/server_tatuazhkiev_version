@@ -39,6 +39,12 @@
     <div class="container">
       <h2 class="text-center"><span>Ваши отзывы</span></h2>
 		{{ flatpage.content }}
+		
+		{% load disqus_tags %}
+		{% disqus_dev %}
+		{% load disqus_tags %}
+		{% disqus_show_comments %}
+		
     </div>
   </section>
 </section>

@@ -20,13 +20,13 @@ BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 SECRET_KEY = '06&(uw0lsobw9(3i@ajnfuf_lm#wbj+v6ph+)!g@7s(+tm84*o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
 THUMBNAIL_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tatuazhkiev.com.ua']
 
 SITE_ID = 2
 
@@ -150,4 +150,5 @@ TINYMCE_DEFAULT_CONFIG = {
     'relative_urls': False,
 }
 
-DISQUS_WEBSITE_SHORTNAME = 'tatuazhkiev'
+DISQUS_API_KEY = '1gQ6cJXWnQmgoDvRaropblMpW7vLTFbu0eYcb3XyMbDj4DjgzDPjhM7CxyQZ3aVD'
+DISQUS_WEBSITE_SHORTNAME = 'tatuazhkiev.com.ua'
