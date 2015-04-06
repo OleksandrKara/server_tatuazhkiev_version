@@ -20,13 +20,13 @@ BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 SECRET_KEY = '06&(uw0lsobw9(3i@ajnfuf_lm#wbj+v6ph+)!g@7s(+tm84*o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
-THUMBNAIL_DEBUG = False
+THUMBNAIL_DEBUG = True
 
-ALLOWED_HOSTS = ['tatuazhkiev.com.ua']
+ALLOWED_HOSTS = ['tatuazhkiev.com.ua','127.0.0.1:8000','localhost:8000']
 
 SITE_ID = 2
 
@@ -43,7 +43,7 @@ INSTALLED_APPS = (
 	'tatuazhkiev.flatpages',
 	'sorl.thumbnail',
 	'django.contrib.sitemaps',
-	'django.contrib.flatpages',
+	#'django.contrib.flatpages',
 	'django.contrib.sites',
 	'tinymce',
 #     'flatpages_tinymce',
