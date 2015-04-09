@@ -33,8 +33,7 @@ SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = (
-    #'grappelli',
-	#'filebrowser',
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +51,7 @@ INSTALLED_APPS = (
     'tatuazhkiev.articles',
     'disqus',
 	'django_evolution',
+	'filebrowser',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
