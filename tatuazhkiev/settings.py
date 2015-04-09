@@ -34,7 +34,7 @@ SITE_ID = 2
 
 INSTALLED_APPS = (
     'grappelli',
-	'filebrowser',
+	#'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,11 +48,10 @@ INSTALLED_APPS = (
 	#'django.contrib.flatpages',
 	'django.contrib.sites',
 	'tinymce',
-#     'flatpages_tinymce',
-     'tatuazhkiev.mymenu',
-     'tatuazhkiev.articles',
-     'disqus',
-	 'django_evolution',
+    'tatuazhkiev.mymenu',
+    'tatuazhkiev.articles',
+    'disqus',
+	'django_evolution',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
