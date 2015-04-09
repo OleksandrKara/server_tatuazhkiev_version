@@ -30,7 +30,10 @@ urlpatterns += patterns('',
 )
 
 urlpatterns += patterns('',
-     (r'^tinymce/', include('tinymce.urls')),
+    (r'^tinymce/', include('tinymce.urls')),
+    #(r'^admin/filebrowser/', include(admin.site.urls)),
+    (r'^admin/filebrowser/', include(admin.site.urls)),
+    (r'^grappelli/', include('grappelli.urls')),
 )
 
 urlpatterns += patterns('',

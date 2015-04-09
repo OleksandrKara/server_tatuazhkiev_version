@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from autoslug import AutoSlugField
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
 from tinymce import models as tinymce_models
