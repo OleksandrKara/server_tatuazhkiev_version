@@ -33,7 +33,7 @@ SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = (
-    'grappelli',
+    #'grappelli',
 	#'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
