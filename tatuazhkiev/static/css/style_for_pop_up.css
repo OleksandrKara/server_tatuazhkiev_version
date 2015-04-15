@@ -1,0 +1,24 @@
+#inline { display: none; width: 400px; }
+
+div.comment {
+	text-align: center;
+}
+
+div.comment span {
+	color: #ec6d07;
+}
+
+div.comment h3 {
+	font-size: 27px;
+    font-weight: normal;
+}
+
+.phone_form {
+	width: 300px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.call_back {
+	padding-left: 33%;
+}
