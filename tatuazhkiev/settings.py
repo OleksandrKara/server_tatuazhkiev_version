@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'tatuazhkiev.articles',
     'disqus',
 	'django_evolution',
+	'ckeditor',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -68,7 +69,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -129,6 +130,10 @@ STATICFILES_FINDERS = (
 )
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

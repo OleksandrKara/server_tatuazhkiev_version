@@ -2,6 +2,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 from django.contrib.sites.models import Site
+from ckeditor.fields import RichTextField
 
 class Post(models.Model):
     title = models.CharField(max_length=255) # заголовок поста
@@ -10,7 +11,7 @@ class Post(models.Model):
     meta_description = models.CharField(max_length=500)
     datetime = models.DateTimeField(u'Дата публикации') # дата публикации
     short_description = content = models.TextField(max_length=10000) # малый текст поста
-    content = models.TextField(max_length=10000)
+    content = RichTextField()
 
     def __unicode__(self):
         return self.title

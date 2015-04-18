@@ -31,6 +31,7 @@ urlpatterns += patterns('',
 
 urlpatterns += patterns('',
     (r'^admin/',  include(admin.site.urls)),
+    (r'^ckeditor/', include('ckeditor.urls')),
 )
 
 urlpatterns += patterns('tatuazhkiev.fotos.views',

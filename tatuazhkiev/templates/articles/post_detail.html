@@ -40,7 +40,7 @@
 			
 			<h3>{{ post.title }}</h3>
 			<p>{{ post.datetime }}</p>
-			<p>{{ post.content }}</p>
+			<div class="row">{{ post.content|safe }}</div>
 			
     </div>
   </section>
