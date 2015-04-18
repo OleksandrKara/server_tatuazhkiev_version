@@ -32,10 +32,10 @@ hr {
 	margin: 10px 0 10px 0;
 }
 h1 {
-	font-size: 36px;
+	font-size: 28px;
 	text-transform: uppercase;
 	color: #33313a;
-	font-weight: bold;
+	font-weight: normal;
 }
 h2 {
 	font-size: 32px;
@@ -482,6 +482,21 @@ aside a.btn {
 	padding-right: 30px;
 	background: url('../../images/bg.jpg') repeat;
 }
+
+/* Main Content H1*/
+.main-content h1 {
+	border-top: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	line-height: 11px;
+	margin-bottom: 40px;
+}
+.main-content h1 span {
+	position: relative;
+	top: 1px;
+	padding-right: 0px;
+	background: url('../../images/bg.jpg') repeat;
+}
+
 /* Footer */
 footer {
 	background: #17161c url('../../images/lights_bg.jpg') no-repeat center top;

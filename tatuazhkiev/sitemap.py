@@ -1,8 +1,35 @@
 # -*- coding: utf-8 -*-
 # Импортируем базовый класс
 from django.contrib.sitemaps import Sitemap
-# Импортируем модель с данными 
-#from fotos.models import Foto
+from tatuazhkiev.articles.models import Post
+
+class SitemapArticlesXML(Sitemap):
+    # Частота обновления страницы (см. http://www.sitemaps.org/) 
+    changefreq = 'weekly'
+    # Приоритет сканирования страницы (см. http://www.sitemaps.org/)
+    priority = 0.5
+	
+	def items(self):
+        # Выбираем из источника данных те данные для которых необходимо
+        # построить файл sitemap
+        return Post.objects.all()
+	
+	def lastmod(self, obj):
+        # Метод возвращает дату которая указывается в параметре lastmod
+        # (см. http://www.sitemaps.org/)
+        return obj.modified
+	
+	def location(self, obj):
+		return "/articles/%s/" % obj.slug
+
+class StaticViewSitemap(Sitemap):
+    priority = 0.5
+    changefreq = 'daily'
+    def items(self):
+        return ['index']
+
+    def location(self, item):
+        return reverse(item)
 
 '''class SitemapXML(Sitemap):
     # Частота обновления страницы (см. http://www.sitemaps.org/) 
@@ -29,5 +56,4 @@ from django.contrib.sitemaps import Sitemap
 class FlatpageSitemap(Sitemap): 
     def items(self): 
         from django.contrib.sites.models import Site 
-        return FlatPage.all().filter('sites = ', 
-Site.objects.get_current().key()) 
+        return FlatPage.all().filter('sites = ', Site.objects.get_current().key()) 

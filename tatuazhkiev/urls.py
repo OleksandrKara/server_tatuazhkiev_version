@@ -6,12 +6,16 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 from django.contrib.sitemaps import FlatPageSitemap, GenericSitemap
 from django.contrib.sitemaps.views import sitemap
+#from tatuazhkiev.sitemap import SitemapArticlesXML, StaticViewSitemap
 from tatuazhkiev.fotos.models import Foto
 from django.contrib.flatpages import views
 
 sitemaps = {
     'flatpages': FlatPageSitemap,
+    #'articles': SitemapArticlesXML,
+    #'static': StaticViewSitemap,
 }
+
 
 admin.autodiscover()
 
@@ -27,6 +31,8 @@ urlpatterns += [
 
 urlpatterns += patterns('',
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps':sitemaps}),
+    #(r'^sitemap2\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps':SitemapArticlesXML}),
+    #url(r'^$', 'main_blog.views.index', name='index'),
 )
 
 urlpatterns += patterns('',
