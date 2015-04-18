@@ -34,16 +34,31 @@
 
 {% block content %}
 <section class="main__middle__container">
-  <section class="recent-posts">
     <div class="container">
-      <h2 class="text-center"><span>{{ post.title }}</span></h2>	  
-			
-			<h3>{{ post.title }}</h3>
-			<p>{{ post.datetime }}</p>
-			<div class="row">{{ post.content|safe }}</div>
-			
+		<div class="row">
+			<section class="col-md-8 main-content">
+				<h2 class="text-center"><span>{{ post.title }}</span></h2>
+				<p>{{ post.datetime }}</p>
+				{{ post.content|safe }}
+			</section>
+			<aside class="col-md-4">
+				<h3>
+					<span>Записаться</span>
+				</h3>
+				<div class="consultation">
+						<div class="info">
+							<span class="title">Есть вопросы?</span>
+							<p>Свяжитесь с нами и получите подробную бесплатную консультацию</p>
+						</div>
+
+					<ul class="phones">
+						<li>(097) 916 34 80</li>
+					</ul>
+				</div>
+				<p><a class="btn btn-primary btn-lg modalbox" style="width:100%;" href="#inline" role="button" >Оставить заявку</a></p>
+			</aside>
+		</div>
     </div>
-  </section>
 </section>
 {% endblock %}
 
