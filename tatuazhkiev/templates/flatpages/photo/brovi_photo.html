@@ -1,0 +1,13 @@
+{% load endless %}
+{% paginate fotosBr using brovi_photo %}
+{% for fotoBr in fotosBr %}
+<li class="mix br col-sm-4 mix_all" style="display: block; opacity: 1;">
+	<a href="{{  fotoBr.image_location.url }}">
+		{% thumbnail fotoBr.image_location "379x253" crop="50%" as small_foto %}
+			<img alt="" src="{{  small_foto.url }}" width="{{ small_foto.width }}" height="{{ small_foto.height }}" class="img-responsive">
+		 {% endthumbnail %}
+		<span class="text">{{ fotoBr.comment_first }}<span>{{ fotoBr.comment_second }}</span></span>
+	</a>
+</li>
+{% endfor %}
+{% show_pages %}

@@ -38,7 +38,7 @@ h1 {
 	font-weight: normal;
 }
 h2 {
-	font-size: 32px;
+	font-size: 30px;
 	text-transform: uppercase;
 	color: #33313a;
 	font-weight: bold;
@@ -110,7 +110,7 @@ div#vk_group_with_name{
 	color: #7d798a;
 	font-weight: 100;
 	padding-top: 20px;
-	font-size: 18px;
+	font-size: 19px;
 }
 .grey-info-block .btn, .grey-info-block .btn:hover {
 	width: 230px;
@@ -570,7 +570,7 @@ footer button.btn-primary:focus {
 }
 
 .carousel-caption h4 {
-	font-size: 40px;
+	font-size: 43px;
 	line-height: 40px;
 }
 
