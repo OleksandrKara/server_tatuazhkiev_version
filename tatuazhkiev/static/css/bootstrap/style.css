@@ -6,13 +6,16 @@ Custom Styles. Bootstrap Styles are default'
 body {
 	font-family: Calibri, sans-serif;
 	background: url('../../images/bg.jpg') repeat;
-	color: #9e9ba8;
+	color: #333;
 }
 a, input, button {
 	-webkit-transition: all ease .2s;
 	-moz-transition: all ease .2s;
 	-o-transition: all ease .2s;
 	transition: all ease .2s;
+}
+p {
+	font-size: 16px;
 }
 /*Header*/
 header.main__header {
