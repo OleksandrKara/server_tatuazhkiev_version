@@ -8,7 +8,7 @@
 	"{{ block.super }}"
 {% endblock %}
 {% block title %}
-	{{ flatpage.title }}
+	Услуги и статьи про перманентный макияж
 {% endblock %}
 
 {% block libs %}
@@ -36,14 +36,14 @@
 <section class="main__middle__container">
   <section class="recent-posts">
     <div class="container">
-      <h1 class="text-center"><span>Articles</span></h1>
+      <h1 class="text-center"><span>Услуги и статьи</span></h1>
 		{{ flatpage.content }}
 				
 		{% for post in object_list %}
 			<a href="{{ post.get_absolute_url }}"><h3>{{ post.title }}</h3></a>
 			<p>{{ post.datetime }}</p>
 			<p>{{ post.short_description }}</p>
-			<a href="{{ post.get_absolute_url }}">More...</a>
+			<a href="{{ post.get_absolute_url }}">Подробнее...</a>
 			{% empty %}
 			<p>Empty</p>
 		{% endfor %}
