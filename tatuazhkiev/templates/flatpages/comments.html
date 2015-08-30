@@ -43,17 +43,18 @@
   <section class="recent-posts">
     <div class="container">
       <h1 class="text-center"><span>Ваши отзывы</span></h1>
+
 		{{ flatpage.content }}
 		
 		{% disqus_dev %}
 		{% disqus_show_comments %}
 		
-		<p>Для просмотра ранее оставленных комментариев перейдите по <a href="https://vk.com/topic-48361848_28946147" target="_blank">ссылке.</p>
 		<div id="vk_comments"></div>
 		<script type="text/javascript">
 			VK.Widgets.Comments("vk_comments", {limit: 20, attach: "*"});
 		</script>
 		
+		<p style="font-size: 20px;">Для просмотра ранее оставленных комментариев перейдите по <a href="https://vk.com/topic-48361848_28946147" target="_blank">ссылке.</p>
     </div>
   </section>
 </section>
