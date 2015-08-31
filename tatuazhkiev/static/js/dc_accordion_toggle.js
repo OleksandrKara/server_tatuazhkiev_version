@@ -64,12 +64,12 @@ $(document).ready(function () {
 			$(selector).each(function () {
 				if ($(this).hasClass("dc_hide")) $(this).find("a.dc_toggle_link").click();
 			});
-			$(this).text("shrink all")
+			$(this).text("закрыть все ответы")
 		} else {
 			$(selector).each(function () {
 				if ($(this).hasClass("dc_show")) $(this).find("a.dc_toggle_link").click();
 			});
-			$(this).text("expand all")
+			$(this).text("открыть все ответы")
 		}
 	});
 });
