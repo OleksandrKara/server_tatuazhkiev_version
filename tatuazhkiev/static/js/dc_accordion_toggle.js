@@ -60,7 +60,7 @@ $(function () {
 $(document).ready(function () {
 	$('.toggleCollapse').on("click", function () {
 		var selector = "." + $(this).attr("rel");
-		if ($(this).text() == "expand all") {
+		if ($(this).text() == "открыть все ответы") {
 			$(selector).each(function () {
 				if ($(this).hasClass("dc_hide")) $(this).find("a.dc_toggle_link").click();
 			});
