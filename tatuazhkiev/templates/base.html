@@ -4,8 +4,8 @@
 <head>
 	<!--<meta charset="utf-8">-->
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
-	<meta name="keywords" content={% block meta_keywords %}Татуаж цены, татуаж бровей, татуаж век, татуаж недорого, татуаж губ, в Киеве, мастер татуажа.{% endblock %}/>
-	<meta name="description" content={% block meta_description %}Татуаж глаз, век, губ и бровей в Киеве недорого.{% endblock %}/>
+	<meta name="keywords" content={% block meta_keywords %}{% endblock %}/>
+	<meta name="description" content={% block meta_description %}{% endblock %}/>
 	<title>{% block title %}{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% block libs %}
@@ -100,37 +100,37 @@
 
 {% block slider %}
 <section class="slider">
-  <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel"> 
-    <!-- Indicators -->
+  <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">	
+	<!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class=""></li>
       <li data-target="#myCarousel" data-slide-to="1" class=""></li>
       <li data-target="#myCarousel" data-slide-to="2" class=""></li>
     </ol>
     <div class="carousel-inner">
-      <div class="item active"> <img data-src="images/slider/slider1.jpg" alt="First slide" src="{% static 'images/slider/slider1.jpg' %} ">
+      <div class="item active"> <img class="blur" data-src="images/slider/slider1.jpg" alt="First slide" src="{% static 'images/slider/slider1.jpg' %} ">
         <div class="container">
           <div class="carousel-caption">
-            <h4>Перманентный макияж <span>бровей</span></h4>
-            <p>Перманентный макияж бровей</p>
+            <h4>Сделаем перманентный макияж <span>бровей</span> в Киеве</h4>
+            <p class="sub-caption">Более 10 лет опыта, 1489 счастливых клиенток, приятные цены</p>
             <p><a class="btn btn-primary modalbox" href="#inline" role="button">Консультация</a><a class="btn btn-default" href="articles/tatuazh-brovej/" role="button">Подробнее</a></p>
           </div>
         </div>
       </div>
-      <div class="item"> <img data-src="images/slider/slider2.jpg" alt="Second slide" src="{% static 'images/slider/slider2.jpg' %}">
+      <div class="item"> <img class="blur" data-src="images/slider/slider2.jpg" alt="Second slide" src="{% static 'images/slider/slider2.jpg' %}">
         <div class="container">
           <div class="carousel-caption">
-            <h4>Перманентный макияж <span>век</span> глаз</h4>
-            <p>Перманентный макияж глаз</p>
+            <h4>Сделаем перманентный макияж <span>век</span> глаз в Киеве</h4>
+            <p class="sub-caption">Более 10 лет опыта, 1489 счастливых клиенток, приятные цены</p>
             <p><a class="btn btn-primary modalbox" href="#inline" role="button">Консультация</a><a class="btn btn-default" href="articles/tatuazh-vek/" role="button">Подробнее</a></p>
           </div>
         </div>
       </div>
-      <div class="item"> <img data-src="images/slider/slider3.jpg" alt="First slide" src="{% static 'images/slider/slider3.jpg' %}">
+      <div class="item"> <img class="blur" data-src="images/slider/slider3.jpg" alt="First slide" src="{% static 'images/slider/slider3.jpg' %}">
         <div class="container">
           <div class="carousel-caption">
-            <h4>Перманентный макияж <span>губ</span></h4>
-            <p>Перманентный макияж губ</p>
+            <h4>Сделаем перманентный макияж <span>губ в Киеве</span></h4>
+            <p class="sub-caption">Более 10 лет опыта, 1489 счастливых клиенток, приятные цены</p>
             <p><a class="btn btn-primary modalbox" href="#inline" role="button">Консультация</a><a class="btn btn-default" href="articles/tatuazh-gub/" role="button">Подробнее</a></p>
           </div>
         </div>
@@ -147,6 +147,21 @@
 {% endblock %}
 	
 {% block content %}{% endblock %}
+
+	<div class="mainfoot">
+		<div class="container">
+			<div class="sub-foot">
+				<div class="ff-phone">
+					<i class="icon-phone-foot"></i>
+					<span class="txt">Мастер</span>
+					<span class="phone-fixed">(097) 916-34-80</span>
+				</div>
+				<div class="ff-mail"><a href="mailto:support@hostpro.ua">kievtatuazh@gmail.com</a></div>
+				<div class="ff-chat"><a class="support-btn-bott" target="_blank" href="https://vk.com/write17914100">Написать мастеру</a></div>
+			</div>
+		</div>
+	</div>
+
 <footer>
   <div class="container">
     <div class="row">

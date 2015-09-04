@@ -25,7 +25,13 @@ header.main__header {
 header.with-boxed {
 	height: 500px;
 }
-
+p.subway {
+	content: "";
+	left: 0;
+	width: 30px;
+	position: absolute;
+	background: rgba(0, 0, 0, 0) url("http://salonbasman.ru/wp-content/themes/lp/images/main/sprite.png") no-repeat scroll 0 0;
+}
 /*Typography*/
 a {
 	color: #ffa02f;
@@ -339,7 +345,6 @@ button.btn-primary:focus {
 	font-size: 18px;
 	font-family: "Roboto", sans-serif;
 	font-weight: 100;
-	text-transform: uppercase;
 	text-shadow: 1px 1px 3px #666666;
 }
 .carousel-caption h1 {
@@ -353,15 +358,20 @@ button.btn-primary:focus {
 .carousel-caption h4 {
 	font-size: 80px;
 	line-height: 80px;
-	font-family: "Roboto", sans-serif;
-	font-weight: 100;
+	font-family: "OpenSans","Times New Roman";
+	font-weight: bold;
 	color: #fff;
+}
+
+.sub-caption {
+	font-size: 26px; 
+	font-weight: bold;
 }
 
 .h1-style{
 	font-size: 40px;
 	line-height: 36px;
-	font-family: "Roboto", sans-serif;
+	font-family: "OpenSans","Times New Roman";
 	font-weight: 100;
 }
 
@@ -521,6 +531,58 @@ aside a.btn {
 }
 
 /* Footer */
+i {
+	background: rgba(0, 0, 0, 0) url("https://hostpro.ua/wp-content/themes/hostpro/assets/img/sprite.png") no-repeat scroll 0 0;
+	background-position: -660px -311px;
+    display: inline-block;
+    height: 12px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 12px;
+}
+.phone-fixed {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0px 30px 0px 10px;
+}
+.de-select-phones {
+	padding: 0 30px;
+	text-align: left;
+}
+.txt {
+    font-size: 16px;
+    font-style: italic;
+    margin-right: 10px;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+.mainfoot {
+	font-family: "Open Sans",san-serif;
+	line-height: 1;
+    background: #ffffff none repeat scroll 0 0;
+    border-top: 1px solid #ebebeb;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+	z-index: 1000;
+}
+.ff-phone{
+	border-right: 2px solid #ebebeb;
+    display: inline-block;
+    padding: 12px 0;
+    vertical-align: middle;
+}
+.ff-mail {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+.ff-chat {
+    float: right;
+    padding: 13px 0;
+}
+
 footer {
 	background: #17161c url('../../images/lights_bg.jpg') no-repeat center top;
 	background-size: 100% 100%;
@@ -573,8 +635,8 @@ footer button.btn-primary:focus {
 }
 
 .carousel-caption h4 {
-	font-size: 43px;
-	line-height: 40px;
+	font-size: 50px;
+	line-height: 55px;
 }
 
 }
