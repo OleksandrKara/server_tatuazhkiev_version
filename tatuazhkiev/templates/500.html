@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
-{% block meta_keywords %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_keywords }}"
+
+{% block meta_tags %}
+	<meta name="keywords" content="505 ошибка"/>
+	<meta name="description" content="Платформа находится на стадии разработки"/>
 {% endblock %}
 
-{% block meta_description %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_description }}"
-{% endblock %}
 
 {% block title %}
 	Извините! Платфома временно не работает

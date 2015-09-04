@@ -30,7 +30,7 @@ p.subway {
 	left: 0;
 	width: 30px;
 	position: absolute;
-	background: rgba(0, 0, 0, 0) url("http://salonbasman.ru/wp-content/themes/lp/images/main/sprite.png") no-repeat scroll 0 0;
+	background: rgba(0, 0, 0, 0) url('../../images/icons/sprite2.png') no-repeat scroll 0 0;
 }
 /*Typography*/
 a {
@@ -532,7 +532,7 @@ aside a.btn {
 
 /* Footer */
 i {
-	background: rgba(0, 0, 0, 0) url("https://hostpro.ua/wp-content/themes/hostpro/assets/img/sprite.png") no-repeat scroll 0 0;
+	background: rgba(0, 0, 0, 0) url('../../images/icons/sprite2.png') no-repeat scroll 0 0;
 	background-position: -660px -311px;
     display: inline-block;
     height: 12px;

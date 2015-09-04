@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-{% block meta_keywords %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_keywords }}"
-{% endblock %}
 
-{% block meta_description %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_description }}"
+{% block meta_tags %}
+	<meta name="keywords" content="Статьи про татуаж"/>
+	<meta name="description" content="Услуги и статьи мастера татуажа"/>
 {% endblock %}
 
 {% block title %}

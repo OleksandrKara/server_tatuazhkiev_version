@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-{% block meta_keywords %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_keywords }}"
-{% endblock %}
 
-{% block meta_description %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_description }}"
+{% block meta_tags %}
+	<meta name="keywords" content="{{ flatpage.extendedflatpage.meta_keywords }}"/>
+	<meta name="description" content="{{ flatpage.extendedflatpage.meta_description }}"/>
 {% endblock %}
 
 {% block title %}
@@ -28,7 +26,7 @@
 <section class="main__middle__container">
   <section class="recent-posts">
     <div class="container">
-      <h1 class="text-center"><span>Вопрос ответ</span></h1>
+      <h1 class="text-center"><span>Вопрос - ответ по татуажу / перманентному макияжу</span></h1>
       <!-- DC Toggle 2 Start -->
 		  <div class="dc_toggle_container" style="width:98%;"> + <a href="#" class="toggleCollapse" rel="style2" onclick="return false;">открыть все ответы</a><br>
 			<br>

@@ -1,18 +1,16 @@
 {% extends "base.html" %}
 
 {% load static %}
-{% block meta_keywords %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_keywords }}"
-{% endblock %}
 
-{% block meta_description %}
-	"{{ block.super }} {{ flatpage.extendedflatpage.meta_description }}"
+{% block meta_tags %}
+	<meta name="keywords" content="{{ flatpage.extendedflatpage.meta_keywords }}"/>
+	<meta name="description" content="{{ flatpage.extendedflatpage.meta_description }}"/>
 {% endblock %}
 
 {% load thumbnail %}
 
 {% block title %}
-	Татуаж в Киеве - Фото татуаж
+	Фото татуаж в Киеве
 {% endblock %}
 
 {% block libs %}
@@ -78,23 +76,6 @@
 			
 		</ul>
     </div>
-    <!--<h2>Portfolio Text</h2>
-    <hr>
-    <div class="one_third">
-      <h4>1/3</h4>
-      <p>Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis</p>
-    </div>
-    <div class="one_third">
-      <h4>1/3</h4>
-      <p>Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis</p>
-    </div>
-    <div class="one_third column-last">
-      <h4>1/3</h4>
-      <p>Donec metus leo, elementum at ultrices ac, dapibus at justo. Donec tristique hendrerit dui vitae lacinia. Suspendisse ante ligula, adipiscing porta aliquam et, rutrum nec lectus. Nulla erat risus, molestie non dapibus ac, fermentum vitae felis</p>
-    </div>
-    <div class="dc_clear"></div>
-    <br>
-    <br>-->
     <br>
   </div>
 </section>

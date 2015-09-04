@@ -4,8 +4,7 @@
 <head>
 	<!--<meta charset="utf-8">-->
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
-	<meta name="keywords" content={% block meta_keywords %}{% endblock %}/>
-	<meta name="description" content={% block meta_description %}{% endblock %}/>
+	{% block meta_tags %}{% endblock %}
 	<title>{% block title %}{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% block libs %}
@@ -76,22 +75,7 @@
 			{% endfor %}
 			</ul>
 		</div>
-			  <!--
-			  <div class="navbar-right navbar-collapse in" id="bs-example-navbar-collapse-1" style="height: auto;">
-				<ul class="nav navbar-nav">
-				  <li class="active"><a href="{{ first_item }}">главная</a></li>
-				  <li class="dropdown"> <a href="{{ second_item }}" class="dropdown-toggle" data-toggle="dropdown">Статьи</a>
-					<ul class="dropdown-menu">
-					  <li><a href="#">статья 1</a></li>
-					  <li><a href="#">статья 2</a></li>
-					</ul>
-				  </li>
-				  <li><a href="{{ third_item }}">фото</a></li>
-				  <li><a href="{{ forth_item }}">цены</a></li>
-				  <li><a href="{{ five_item }} ">контакты</a></li>
-				</ul>
-			  </div>-->
-			  <!-- /.navbar-collapse -->
+			  
 {% endblock %}
     </nav>
   </div>
