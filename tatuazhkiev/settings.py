@@ -25,10 +25,6 @@ DEBUG = False
 TEMPLATE_DEBUG = False
 THUMBNAIL_DEBUG = False
 
-#DEBUG = True
-#TEMPLATE_DEBUG = True
-#THUMBNAIL_DEBUG = True
-
 ALLOWED_HOSTS = ['tatuazhkiev.com.ua','127.0.0.1:8000','localhost:8000']
 
 SITE_ID = 2
@@ -41,17 +37,18 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-	'tatuazhkiev.fotos',
-	'tatuazhkiev.flatpages',
+    'django.contrib.staticfiles',	
 	'sorl.thumbnail',
 	'django.contrib.sitemaps',
 	'django.contrib.sites',
+    'disqus',
+	'ckeditor',
+	'south',
+	'tatuazhkiev.fotos',
+	'tatuazhkiev.flatpages',
     'tatuazhkiev.mymenu',
     'tatuazhkiev.articles',
-    'disqus',
-	'django_evolution',
-	'ckeditor',
+
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -86,13 +83,12 @@ WSGI_APPLICATION = 'tatuazhkiev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tatuazhkiev',
-		'USER': 'root',
-		'PASSWORD': 'TrustPoint85',
-		#'PASSWORD': '1111',
+		'USER': 'postgres',
+		'PASSWORD': '1111',
 		'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
@@ -101,7 +97,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
