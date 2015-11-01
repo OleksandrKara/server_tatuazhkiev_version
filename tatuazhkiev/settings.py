@@ -21,9 +21,9 @@ SECRET_KEY = '06&(uw0lsobw9(3i@ajnfuf_lm#wbj+v6ph+)!g@7s(+tm84*o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
-TEMPLATE_DEBUG = True
-THUMBNAIL_DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = False
+THUMBNAIL_DEBUG = False
 
 ALLOWED_HOSTS = ['tatuazhkiev.com.ua','127.0.0.1:8000','localhost:8000']
 
@@ -97,7 +97,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
