@@ -1,1 +1,0 @@
-/var/www/python/tatuazhkiev/manage.py
