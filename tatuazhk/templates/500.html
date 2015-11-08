@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta_tags %}
+	<meta name="keywords" content="505 ошибка"/>
+	<meta name="description" content="Платформа находится на стадии разработки"/>
+{% endblock %}
+
+
+{% block title %}
+	Извините! Платфома временно не работает
+{% endblock %}
+
+{% block libs %}
+	{{ block.super }}
+	<style>
+		#feedback {
+			color: #1c6107;
+		}
+		#feedback ul {
+			padding-left: 0;
+		}
+		#feedback ul li {
+			list-style: none;
+		}
+	</style>
+{% endblock %}
+
+{% block menu %}
+	{{ block.super }}
+{% endblock %}
+
+{% block slider %}{% endblock %}
+
+{% block content %}
+<section class="main__middle__container">
+  <section class="recent-posts">
+    <div class="container">
+      <h1 style="font-size: 35px; text-align: center; border: none;">Извините! Платфома временно не работает</h1>
+		<p>Просим извинения за временное неудобство. 
+		</p>
+    </div>
+  </section>
+</section>
+{% endblock %}
+
+{% block add_libs %}
+	{{ block.super }}
+{% endblock %}
